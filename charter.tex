@@ -27,7 +27,7 @@
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Área de atención al cliente}
+\cliente{Nicolás Dagosta}
 \empresaCliente{Ualá}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
@@ -120,7 +120,7 @@ Se adjunta a esta acta la planificación inicial.
 
 Ualá es una \textit{fintech} Argentina que brinda su servicio de billetera digital a través de una aplicación móvil. Además, provee una tarjeta prepaga Mastercard para poder operar la cuenta. Los servicios principales que provee son:
 \begin{itemize}
-	\item Enviar y recibir plata desde cualquier cuenta bancaria.
+	\item Enviar y recibir dinero desde cualquier cuenta bancaria.
 	\item Realizar compras nacionales o internacionales con la tarjeta.
 	\item Extraer efectivo.
 	\item Pagar servicios.
@@ -165,14 +165,14 @@ La propuesta consiste en desarrollar y entrenar un modelo clasificador, con los 
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
 %Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      & Nicolás Dagosta   & \empclientename            & Gerente de Machine Learning       	\\ \hline
+Cliente       & \clientename   & \empclientename	& Gerente de Machine Learning       	\\ \hline
+Impulsor      & \clientename   & \empclientename    & Gerente de Machine Learning       	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
 %Colaboradores &                   &              	&        	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
 %Equipo        & -                 & -             	& -       	\\ \hline
 %Opositores    &                   &              	&        	\\ \hline
-Usuario final & \clientename        & \empclientename            	& -       	\\ \hline
+Usuario final & Área de atención al cliente        & \empclientename            	& -       	\\ \hline
 \end{tabularx}
 \end{table}
 
@@ -188,37 +188,53 @@ Usuario final & \clientename        & \empclientename            	& -       	\\ 
 \label{sec:proposito}
 
 %\begin{consigna}{red}
-El propósito de este proyecto es: optimizar el tiempo que lleva el proceso de resolución de reclamos y consultas, mediante su clasificación automática; y por otro lado, reducir la cantidad de personas necesarias para realizar esta tarea, de manera tal que puedan enfocarse en el proceso de resolución.
+El propósito de este proyecto es: optimizar el tiempo que lleva el proceso de clasificación de reclamos y consultas, mediante su automatización; y por otro lado, reducir la cantidad de personas necesarias para supervisar esta tarea, de manera tal que puedan enfocarse en el proceso de resolución.
 %\end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+%\begin{consigna}{red}
+El alcance de este proyecto está orientado a desarrollar un prototipo de solución de software que incluirá las siguientes actividades:
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
+\begin{itemize}
+	\item Obtención de los datos: Se corresponde con el análisis de las fuentes de datos disponibles y su integración al proceso que se plantea desarrollar.
+	\item Análisis exploratorio de los datos: Se corresponde con las actividades necesarias para generar nuevos \textit{insights}, que sirvan para guiar el desarrollo de los modelos.
+	\item Modelado: Se corresponde con la generación de variables a partir de los datos disponibles, que luego serán utilizadas para entrenar los modelos. 
+	\item Entrenamiento: Se corresponde con la generación de distintos modelos de Inteligencia Artificial, y su comparación a través de métricas, para encontrar el que mejor se adapte a la problemática de negocio. Estas comparaciones se presentarán en un informe de resultados de los modelos.
+	\item Despliegue: Se corresponde con el diseño de la infraestructura necesaria para ejecutar los modelos de IA y su despliegue en un entorno de desarrollo (no productivo).
+	\item Documentación: Se corresponde con los documentos de soporte que explican el proceso de Modelado, Entrenamiento y Despliegue de los modelos.
+\end{itemize}
 
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
+El presente proyecto no incluye:
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+\begin{itemize}
+	\item La adaptación de los modelos a nuevas categorías de reclamos que puedan surgir durante el desarrollo o una vez finalizado el desarrollo. Se utilizarán casos resueltos de 2021 y 2022 y las categorías a considerar serán las que existan hasta ese momento. 
+	\item La integración de los modelos y su despliegue con el ambiente productivo.
+	\item El soporte de la infraestructura desplegada en el entorno de desarrollo.
+\end{itemize}
 
-\end{consigna}
+%\end{consigna}
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+%\begin{consigna}{red}
+Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item La empresa mantendrá sus operaciones al menos hasta finalizar el desarrollo.
+	\item Mantendré la relación laboral con la empresa al menos hasta finalizar el desarrollo.
+	\item Siendo el único desarrollador en este proyecto, no tendré enfermedades graves que puedan alterar los plazos estipulados para las actividades planteadas.
+	\item El área de atención al cliente no realizará cambios en su \textit{CRM} que puedan afectar el proceso de réplica de los casos hacia BigQuery, ni que puedan afectar las categorías sobre las cuales se desarrollan los modelos.
+	\item El área de Data de la empresa no cambiará su Cloud Provider ni modificará su proceso de réplica hacia BigQuery.
+	\item Tendré acceso a infraestructura cloud para el entrenamiento y despliegue de los modelos.
+	\item Las consultas que realice al área de atención al cliente se resolverán en plazos razonables.
+	
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
+%\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
