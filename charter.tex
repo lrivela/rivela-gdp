@@ -260,7 +260,7 @@ Para el desarrollo del presente proyecto se supone que:
 		\end{enumerate}
 	\item Requerimientos de testing
 		\begin{enumerate}
-			\item Se deben generar métricas de performance del modelo con el dataset de entrenamiento y de prueba.
+			\item Se deben generar métricas de performance de los modelos con el dataset de entrenamiento y de prueba.
 		\end{enumerate}
 	\item Requerimientos de documentación
 		\begin{enumerate}
@@ -275,13 +275,61 @@ Para el desarrollo del presente proyecto se supone que:
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+%\begin{consigna}{red}
+Roles:
+\begin{itemize}
+	\item Área de atención al cliente
+	\item Área de Machine Learning
+\end{itemize}
 
-El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
+Historias de usuario:
 
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
-\end{consigna}
+\begin{enumerate}
+	\item Como Área de atención al cliente quiero clasificar automáticamente los reclamos y consultas para poder brindar una mejor atención a los usuarios.
+	\item Como Área de atención al cliente quiero que el proceso corra diariamente para poder clasificar los reclamos a día cerrado.
+	\item Como Área de atención al cliente quiero poder consumir los resultados de la clasificación desde una base de datos para poder integrarlo con el sistema que usamos en el área.
+	\item Como Área de Machine Learning quiero tener documentación que detallen la implementación de la solución para que el proyecto se ajuste a nuestras prácticas de desarrollo.
+	\item Como Área de Machine Learning quiero tener métricas de performance de los modelos para tener una referencia y poder monitorear desvíos en el proceso en el futuro.
+	
+\end{enumerate}
+
+Criterio para calcular los \textit{story points} de cada historia:
+
+\begin{itemize}
+	\item Criterio A: Cantidad de trabajo a realizar
+	\item Criterio B: Complejidad del trabajo a realizar
+	\item Criterio C: Incertidumbre del trabajo a realizar
+\end{itemize}
+
+Pesos para los criterios:
+
+\begin{table}[H]
+\begin{tabular}{c c c c}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Nivel           & Criterio A     & Criterio B 	    & Criterio C 	 \\ \hline
+Bajo            & 1              & 1	            & 1              \\ \hline
+Medio           & 2              & 3                & 5               \\ \hline
+Alto            & 5              & 5        	    & 8 	          \\ \hline
+\end{tabular}
+\end{table}
+
+Story points:
+
+\begin{table}[H]
+\begin{tabular}{c c c c c c}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Historia           & Criterio A     & Criterio B 	    & Criterio C   & Peso resultante  & Fibonacci	 \\ \hline
+1                  & 5              & 5	                & 8            &  18              &  21            \\ \hline
+2                  & 2              & 1                 & 1            &  4               &  5            \\ \hline
+3                  & 2              & 3        	        & 1 	       &  6               &  8              \\ \hline
+4                  & 2              & 1        	        & 1 	       &  4               &  5             \\ \hline
+5                  & 2              & 3        	        & 1 	       &  6               &  8              \\ \hline
+\end{tabular}
+\end{table}
+
+%\end{consigna}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
