@@ -7,7 +7,7 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Clasificación de Reclamos de Usuarios} 
+\titulo{Clasificación de reclamos de usuarios} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -20,14 +20,14 @@
 \autor{Ing. Lucas Rivela} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Msc. Rodrigo Cárdenas}
+\director{Mg. Lic. Rodrigo Cárdenas}
 \pertenenciaDirector{FIUBA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 \codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nicolás Dagosta}
+\cliente{Lic. Nicolás Dagosta}
 \empresaCliente{Ualá}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en la implementación de un prototipo de PNL para la clasificación de reclamos de usuarios, y tendrá un presupuesto preliminar estimado de 675 h de trabajo y U\$D500, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en la implementación de un prototipo de procesamiento de lenguaje natural (PNL)  para la clasificación de reclamos de usuarios, y tendrá un presupuesto preliminar estimado de 675 h de trabajo y U\$D500, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -118,7 +118,27 @@ Se adjunta a esta acta la planificación inicial.
 
 %\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
 
-Ualá es una \textit{fintech} Argentina que brinda su servicio de billetera digital a través de una aplicación móvil. Además, provee una tarjeta prepaga Mastercard para poder operar la cuenta. Los servicios principales que provee son:
+El objetivo de este proyecto será contar con modelos de inteligencia artificial (IA) que contribuyan a agilizar y mejorar la atención al cliente, mediante la categorización automática de los reclamos de los usuarios. Esto permitirá reducir la cantidad de personas necesarias para la clasificación manual, para que se puedan enfocar en resolver los casos más prioritarios.
+
+Esta propuesta se alinea con la estrategia de la compañía de no tener sucursales abiertas al público, en la cual resulta muy importante que los canales de atención online sean rápidos y efectivos, para así poder asegurarle al cliente una buena calidad de servicio.
+
+En la Figura \ref{fig:figura1} se presenta un diagrama de alto nivel de la solución. Se observa que en primera instancia, los reclamos son recibidos por correo y chat, y luego son registrados en Salesforce.
+Diariamente, estos datos son replicados en BigQuery (el Data Warehouse) a través del orquestador Apache Airflow. Estos dos últimos componentes están desplegados en Google Cloud Platform. 
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=.85\textwidth]{./Figuras/figura1.png}
+\caption{Diagrama de alto nivel.}
+\label{fig:figura1}
+\end{figure}
+
+%\vspace{25px}
+
+Con este proyecto se busca desarrollar y entrenar un modelo clasificador, con los casos de 2021 y 2022 que se encuentran en BigQuery y hayan sido etiquetados manualmente. Una vez desarrollado, se desplegará en la misma nube para realizar las inferencias sobre los nuevos reclamos.
+
+Acerca de la empresa:
+
+Ualá es una \textit{fintech} argentina que brinda su servicio de billetera digital a través de una aplicación móvil. Además, provee una tarjeta prepaga Mastercard para poder operar la cuenta. Los servicios principales que provee son:
 \begin{itemize}
 	\item Enviar y recibir dinero desde cualquier cuenta bancaria.
 	\item Realizar compras nacionales o internacionales con la tarjeta.
@@ -128,24 +148,6 @@ Ualá es una \textit{fintech} Argentina que brinda su servicio de billetera digi
 	\item Realizar ventas a través de \textit{mPOS}, \textit{QR} o link de pago.
 	\item Realizar inversiones.
 \end{itemize}
-
-Debido a la estrategia de la compañía de no tener sucursales abiertas al público, resulta muy importante que los canales de atención online sean rápidos y efectivos, para así poder asegurarle al cliente una buena calidad de servicio.
-
-El objetivo de este proyecto será contar con modelos de inteligencia artificial que contribuyan a agilizar y mejorar la atención al cliente, mediante la categorización automática de los reclamos de los usuarios. Esto permitirá reducir la cantidad de personas necesarias para la clasificación manual, para que se puedan enfocar en resolver los casos más prioritarios.
-
-En la Figura \ref{fig:figura1} se presenta un diagrama de alto nivel de la solución. Se observa que en primera instancia, los reclamos son recibidos por correo y chat, y luego son registrados en \textit{Salesforce}.
-Diariamente, estos datos son replicados en \textit{BigQuery} (el Data Warehouse) a través del orquestador \textit{Apache Airflow}. Estos dos últimos componentes están desplegados en \textit{Google Cloud Platform}. 
-
-\begin{figure}[H]
-\centering 
-\includegraphics[width=.5\textwidth]{./Figuras/figura1.png}
-\caption{Diagrama de alto nivel}
-\label{fig:figura1}
-\end{figure}
-
-%\vspace{25px}
-
-La propuesta consiste en desarrollar y entrenar un modelo clasificador, con los casos de 2021 y 2022 que se encuentran en BigQuery y han sido etiquetados manualmente. Una vez desarrollado, se desplegará en la misma nube para realizar las inferencias sobre los nuevos reclamos.
 
 %\end{consigna}
 
@@ -160,7 +162,7 @@ La propuesta consiste en desarrollar y entrenar un modelo clasificador, con los 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
 %\label{tab:interesados}
-\begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
+\begin{tabularx}{\linewidth}{@{}|l|X|l|l|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
@@ -188,7 +190,7 @@ Usuario final & Área de atención al cliente        & \empclientename          
 \label{sec:proposito}
 
 %\begin{consigna}{red}
-El propósito de este proyecto es: optimizar el tiempo que lleva el proceso de clasificación de reclamos y consultas, mediante su automatización; y por otro lado, reducir la cantidad de personas necesarias para supervisar esta tarea, de manera tal que puedan enfocarse en el proceso de resolución.
+Optimizar el tiempo que lleva el proceso de clasificación de reclamos y consultas mediante su automatización; y por otro lado, reducir la cantidad de personas necesarias para supervisar esta tarea, de manera tal que puedan enfocarse en el proceso de resolución.
 %\end{consigna}
 
 \section{4. Alcance del proyecto}
@@ -198,12 +200,12 @@ El propósito de este proyecto es: optimizar el tiempo que lleva el proceso de c
 El alcance de este proyecto está orientado a desarrollar un prototipo de solución de software que incluirá las siguientes actividades:
 
 \begin{itemize}
-	\item Obtención de los datos: Se corresponde con el análisis de las fuentes de datos disponibles y su integración al proceso que se plantea desarrollar.
-	\item Análisis exploratorio de los datos: Se corresponde con las actividades necesarias para generar nuevos \textit{insights}, que sirvan para guiar el desarrollo de los modelos.
-	\item Modelado: Se corresponde con la generación de variables a partir de los datos disponibles, que luego serán utilizadas para entrenar los modelos. 
-	\item Entrenamiento: Se corresponde con la generación de distintos modelos de Inteligencia Artificial, y su comparación a través de métricas, para encontrar el que mejor se adapte a la problemática de negocio. Estas comparaciones se presentarán en un informe de resultados de los modelos.
-	\item Despliegue: Se corresponde con el diseño de la infraestructura necesaria para ejecutar los modelos de IA y su despliegue en un entorno de desarrollo (no productivo).
-	\item Documentación: Se corresponde con los documentos de soporte que explican el proceso de Modelado, Entrenamiento y Despliegue de los modelos.
+	\item Obtención de los datos: se corresponde con el análisis de las fuentes de datos disponibles y su integración al proceso que se plantea desarrollar.
+	\item Análisis exploratorio de los datos: se corresponde con las actividades necesarias para generar nuevos \textit{insights}, que sirvan para guiar el desarrollo de los modelos.
+	\item Modelado: se corresponde con la generación de variables a partir de los datos disponibles, que luego serán utilizadas para entrenar los modelos. 
+	\item Entrenamiento: se corresponde con la generación de distintos modelos de IA, y su comparación a través de métricas, para encontrar el que mejor se adapte a la problemática de negocio. Estas comparaciones se presentarán en un informe de resultados de los modelos.
+	\item Despliegue: se corresponde con el diseño de la infraestructura necesaria para ejecutar los modelos de IA y su despliegue en un entorno de desarrollo (no productivo).
+	\item Documentación: se corresponde con los documentos de soporte que explican el proceso de modelado, entrenamiento y despliegue de los modelos.
 \end{itemize}
 
 El presente proyecto no incluye:
@@ -225,12 +227,12 @@ Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
 	\item La empresa mantendrá sus operaciones al menos hasta finalizar el desarrollo.
-	\item Mantendré la relación laboral con la empresa al menos hasta finalizar el desarrollo.
-	\item Siendo el único desarrollador en este proyecto, no tendré enfermedades graves que puedan alterar los plazos estipulados para las actividades planteadas.
+	\item Se Mantendrá la relación laboral con la empresa al menos hasta finalizar el desarrollo.
+	\item El desarrollador asignado a este proyecto no tendrá enfermedades graves que puedan alterar los plazos estipulados para las actividades planteadas.
 	\item El área de atención al cliente no realizará cambios en su \textit{CRM} que puedan afectar el proceso de réplica de los casos hacia BigQuery, ni que puedan afectar las categorías sobre las cuales se desarrollan los modelos.
-	\item El área de Data de la empresa no cambiará su Cloud Provider ni modificará su proceso de réplica hacia BigQuery.
-	\item Tendré acceso a infraestructura cloud para el entrenamiento y despliegue de los modelos.
-	\item Las consultas que realice al área de atención al cliente se resolverán en plazos razonables.
+	\item El área de Data de la empresa no cambiará su \textit{Cloud Provider} ni modificará su proceso de réplica hacia BigQuery.
+	\item Se tendrá acceso a infraestructura cloud para el entrenamiento y despliegue de los modelos.
+	\item Las consultas realizadas al área de atención al cliente se resolverán en plazos razonables.
 	
 \end{itemize}
 
@@ -252,11 +254,11 @@ Para el desarrollo del presente proyecto se supone que:
 		\end{enumerate}
 	\item Requerimientos no funcionales
 		\begin{enumerate}
-			\item El sistema debe estar desarrollado en lenguaje \textit{Python}.
-			\item El código debe ser versionado con \textit{Git}.
+			\item El sistema debe estar desarrollado en lenguaje Python.
+			\item El código debe ser versionado con Git.
 			\item La solución debe estar desplegada sobre infraestructura de Google Cloud Platform.
 			\item La salida de los modelos debe ser almacenada en BigQuery.
-			\item El proceso debe ser ejecutado a través del orquestador \textit{Apache Airflow}.
+			\item El proceso debe ser ejecutado a través del orquestador Apache Airflow.
 		\end{enumerate}
 	\item Requerimientos de testing
 		\begin{enumerate}
@@ -265,7 +267,7 @@ Para el desarrollo del presente proyecto se supone que:
 	\item Requerimientos de documentación
 		\begin{enumerate}
 			\item Se debe confeccionar un documento con el diseño de la arquitectura de alto nivel.
-			\item Se debe confeccionar un documento con el diseño de los modelos de inteligencia artificial.
+			\item Se debe confeccionar un documento con el diseño de los modelos de IA.
 			\item Se debe confeccionar un documento que especifique los datos que consumen los modelos y su origen.
 		\end{enumerate}
 \end{enumerate}
@@ -355,37 +357,84 @@ Los entregables del proyecto son:
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
+%\begin{consigna}{red}
+Se detallan a continuación todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos y su duración estimada:
 
 \begin{enumerate}
-\item Grupo de tareas 1
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas h)
-	\end{enumerate}
-\item Grupo de tareas 2
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\end{enumerate}
-\item Grupo de tareas 3
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\item Tarea 4 (tantas h)
-	\item Tarea 5 (tantas h)
-	\end{enumerate}
+	\item Planificación general del proyecto (50 h)
+		\begin{enumerate}
+			\item Redacción de la descripción técnica-conceptual y propósito. (10 h)
+			\item Definición del alcance, requerimientos y entregables. (10 h)
+			\item Definición de tiempos y presupuesto. (15 h)
+			\item Definición de la gestión de riesgos, calidad y procesos de cierre. (15 h)
+		\end{enumerate}
+	\item Relevamiento (30 h)
+		\begin{enumerate}
+			\item Reuniones con el área de atención al cliente. (10 h)
+			\item Análisis de las fuentes de datos. (10 h)
+			\item Análisis del proceso de clasificación de reclamos y consultas. (10 h)
+		\end{enumerate}
+	\item Análisis exploratorio de los datos (35 h)
+		\begin{enumerate}
+			\item Análisis de la distribución de categorías. (10 h) 
+			\item Análisis de la longitud de los mensajes. (10 h)
+			\item Análisis del procesamiento del texto. (15 h)
+		\end{enumerate}
+	\item Desarrollo (290 h)
+		\begin{enumerate}
+			\item Programación de \textit{scripts} para obtener datos de entrada de los modelos. (10 h)
+			\item Desarrollo del pipeline de preprocesamiento del texto. (90 h)
+				\begin{itemize}
+					\item Módulo para remover partes comunes de los mensajes. (15 h)
+					\item Módulo para remover palabras redundantes. (15 h)
+					\item Módulo para remover símbolos. (10 h)
+					\item Módulo para corregir faltas de ortografía. (40 h)
+					\item Módulo para armar secuencias. (10 h)
+				\end{itemize}
+			\item Desarrollo y entrenamiento de \textit{embeddings}. (60 h)
+				\begin{itemize}
+					\item Investigación herramientas de embeddings. (20 h)
+					\item Selección de herramienta de embeddings. (20 h)
+					\item Entrenamiento de embeddings. (20 h)
+				\end{itemize}
+			\item Desarrollo y entrenamiento de modelos. (130 h)
+				\begin{itemize}
+					\item Investigación de arquitecturas de IA que apliquen al problema. (40 h)
+					\item Entrenamiento de modelo baseline. (10 h)
+					\item Desarrollo de \textit{scripts} para modelos avanzados. (25 h)
+					\item Entrenamiento de modelos avanzados. (50 h)
+					\item Desarrollo de módulo de escritura de resultados en BigQuery. (5 h)
+				\end{itemize}
+		\end{enumerate}
+	\item Evaluación y pruebas (35 h)
+		\begin{enumerate}
+			\item Obtención de métricas de los modelos. (30 h)
+			\item Selección del mejor modelo. (5 h)
+		\end{enumerate}
+	\item Despliegue (50 h)
+		\begin{enumerate}
+			\item Diseño de la arquitectura del \textit{pipeline}. (10 h)
+			\item Desarrollo de Github Actions. (5 h)
+			\item Desarrollo de la imagen de Docker. (20 h)
+			\item Desarrollo de DAG de clasificación. (15 h)
+		\end{enumerate}
+	\item Documentación (30 h)
+		\begin{enumerate}
+			\item Elaboración de documento de arquitectura alto nivel. (10 h)
+			\item Elaboración de documento con el diseño de los modelos de IA. (10 h)
+			\item Elaboración de documento con los datos consumidos. (10 h)
+		\end{enumerate}
+	\item Cierre del proyecto (80 h)
+		\begin{enumerate}
+			\item Redacción del informe de avance. (20 h)
+			\item Redacción de memoria final. (40 h)
+			\item Elaboración de presentación para exposición final. (20 h) 
+		\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (tantas h)
+Cantidad total de horas: (600 h)
 
-Se recomienda que no haya ninguna tarea que lleve más de 40 h. 
-
-\end{consigna}
+%\end{consigna}
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
