@@ -74,7 +74,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
-%3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
+3      & Se completa hasta el punto 12 inclusive                & 27 de marzo de 2023 \\ \hline
 %4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
 \end{tabularx}
 \end{table}
@@ -247,7 +247,7 @@ Para el desarrollo del presente proyecto se supone que:
 		\begin{enumerate}
 			\item El sistema debe poder detectar la categoría de un reclamo escrito en lenguaje natural.
 			\item El sistema debe poder detectar la categoría de una consulta escrita en lenguaje natural.
-			\item El usuario debe poder consumir los resultados de la clasificación desde una base de datos.
+			\item El usuario debe poder utilizar los resultados de la clasificación desde una base de datos.
 			\item El proceso debe ser capaz de interpretar errores de ortografía.
 			\item El proceso debe ser capaz de adaptarse a distinta cantidad de palabras en el mensaje.
 			\item La solución debe ejecutarse en forma \textit{batch}, corriendo diariamente y tomando los casos del día anterior.
@@ -281,17 +281,17 @@ Para el desarrollo del presente proyecto se supone que:
 Roles:
 \begin{itemize}
 	\item Área de atención al cliente
-	\item Área de Machine Learning
+	\item Área de \textit{Machine Learning}
 \end{itemize}
 
 Historias de usuario:
 
 \begin{enumerate}
-	\item Como Área de atención al cliente quiero clasificar automáticamente los reclamos y consultas para poder brindar una mejor atención a los usuarios.
-	\item Como Área de atención al cliente quiero que el proceso corra diariamente para poder clasificar los reclamos a día cerrado.
-	\item Como Área de atención al cliente quiero poder consumir los resultados de la clasificación desde una base de datos para poder integrarlo con el sistema que usamos en el área.
-	\item Como Área de Machine Learning quiero tener documentación que detallen la implementación de la solución para que el proyecto se ajuste a nuestras prácticas de desarrollo.
-	\item Como Área de Machine Learning quiero tener métricas de performance de los modelos para tener una referencia y poder monitorear desvíos en el proceso en el futuro.
+	\item Como área de atención al cliente quiero clasificar automáticamente los reclamos y consultas para poder brindar una mejor atención a los usuarios.
+	\item Como área de atención al cliente quiero que el proceso corra diariamente para poder clasificar los reclamos a día cerrado.
+	\item Como área de atención al cliente quiero poder consumir los resultados de la clasificación desde una base de datos para poder integrarlo con el sistema utilizado en el área.
+	\item Como área de \textit{Machine Learning} quiero tener documentación que detalle la implementación de la solución para que el proyecto se ajuste a nuestras prácticas de desarrollo.
+	\item Como área de \textit{Machine Learning} quiero tener métricas de performance de los modelos para tener una referencia y poder monitorear desvíos en el proceso en el futuro.
 	
 \end{enumerate}
 
@@ -393,16 +393,17 @@ Se detallan a continuación todas las actividades que se harán en el proyecto p
 				\end{itemize}
 			\item Desarrollo y entrenamiento de \textit{embeddings}. (60 h)
 				\begin{itemize}
-					\item Investigación herramientas de embeddings. (20 h)
-					\item Selección de herramienta de embeddings. (20 h)
-					\item Entrenamiento de embeddings. (20 h)
+					\item Investigación herramientas de \textit{embeddings}. (20 h)
+					\item Selección de herramienta de \textit{embeddings}. (20 h)
+					\item Entrenamiento de \textit{embeddings}. (20 h)
 				\end{itemize}
 			\item Desarrollo y entrenamiento de modelos. (130 h)
 				\begin{itemize}
 					\item Investigación de arquitecturas de IA que apliquen al problema. (40 h)
 					\item Entrenamiento de modelo baseline. (10 h)
 					\item Desarrollo de \textit{scripts} para modelos avanzados. (25 h)
-					\item Entrenamiento de modelos avanzados. (50 h)
+					\item Entrenamiento de modelos avanzados - Parte A. (25 h)
+					\item Entrenamiento de modelos avanzados - Parte B. (25 h)
 					\item Desarrollo de módulo de escritura de resultados en BigQuery. (5 h)
 				\end{itemize}
 		\end{enumerate}
@@ -414,9 +415,9 @@ Se detallan a continuación todas las actividades que se harán en el proyecto p
 	\item Despliegue (50 h)
 		\begin{enumerate}
 			\item Diseño de la arquitectura del \textit{pipeline}. (10 h)
-			\item Desarrollo de Github Actions. (5 h)
+			\item Desarrollo de GitHub Actions. (5 h)
 			\item Desarrollo de la imagen de Docker. (20 h)
-			\item Desarrollo de DAG de clasificación. (15 h)
+			\item Desarrollo de DAG (Directed Acyclic Graph) de clasificación. (15 h)
 		\end{enumerate}
 	\item Documentación (30 h)
 		\begin{enumerate}
@@ -521,16 +522,11 @@ En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de Gantt realiza
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
+%\begin{consigna}{red}
 
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
+A continuación, se detalla la composición del presupuesto del proyecto expresado en dólares estadounidenses:
 
-\end{consigna}
+%\end{consigna}
 
 \begin{table}[htpb]
 \centering
@@ -543,24 +539,24 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+Horas de ingeniería &
+  \multicolumn{1}{c|}{600 horas} &
+  \multicolumn{1}{c|}{\$10 USD} &
+  \multicolumn{1}{c|}{\$6000 USD} \\ \hline
+Procesamiento en GCP &
+  \multicolumn{1}{c|}{200 horas} &
+  \multicolumn{1}{c|}{\$1 USD} &
+  \multicolumn{1}{c|}{\$200 USD} \\ \hline
+Consultas BigQuery & 
+  \multicolumn{1}{c|}{1 unidad} &
+  \multicolumn{1}{c|}{\$10 USD} &
+  \multicolumn{1}{c|}{\$10 USD} \\ \hline
 \multicolumn{1}{|l|}{} &
    &
    &
    \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{\$6210 USD} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -568,10 +564,8 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+\multicolumn{1}{|l|}{Notebook} & 1 unidad & \$1200 USD & \$1200 USD \\ \hline
+\multicolumn{1}{|l|}{Cloud Storage 20GB} & 1 unidad & \$5 USD & \$5 USD \\ \hline
 \multicolumn{1}{|l|}{} &
    &
    &
@@ -581,10 +575,10 @@ Descripción &
    &
    \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{\$1205 USD} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
-   \\ \hline
+\multicolumn{3}{|c|}{TOTAL} & 
+\multicolumn{1}{c|}{\$7415 USD} \\ \hline
 \end{tabularx}%
 \end{table}
 
