@@ -626,21 +626,46 @@ Riesgo 2: se utilizarán alternativas a Google Cloud, como Paperspace, Google Co
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Para cada uno de los requerimientos del proyecto indique:
+%\begin{consigna}{red}
 \begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
-
-\begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
+	\item Req. \#1.1, Req. \#1.2, Req. \#1.4 y Req. \#1.5: el sistema debe poder detectar la categoría de un reclamo o consulta escrito en lenguaje natural, con o sin errores de ortografía y cantidad de palabras variable.
+	\begin{itemize}
+		\item Verificación: se probarán mensajes de distintas longitudes, con y sin errores y se revisará que se asigne una categoría.
+		\item Validación: se revisarán con el cliente distintos mensajes de entrada y la categoría asignada.
+	\end{itemize}
+	\item Req. \#1.6: la solución debe ejecutarse en forma \textit{batch}, corriendo diariamente y tomando los casos del día anterior.
+	\begin{itemize}
+		\item Verificación: se implementará un \textit{cronjob} que refleje una periodicidad diaria, corriendo por la mañana y tomando los casos del día cerrado inmediatamente anterior. 
+		\item Validación: se dejará el \textit{schedule} activado y se controlará al día siguiente la ejecución automática con el cliente.
+	\end{itemize}
+	\item Req. \#2.3: la solución debe estar desplegada sobre infraestructura de Google Cloud Platform.
+	\begin{itemize}
+		\item Verificación: la solución se implementará usando componentes de infraestructura que hayan sido previamente desplegadas en el área de \textit{Machine Learning}.
+		\item Validación: se controlará con el cliente que los componentes elegidos sean los adecuados.
+	\end{itemize}
+	\item Req. \#1.3 y \#2.4: el usuario debe poder utilizar los resultados de la clasificación desde una base de datos y la salida de los modelos debe ser almacenada en BigQuery.
+	\begin{itemize}
+		\item Verificación: se almacenarán los resultados en una tabla de BigQuery controlando que el esquema donde está la tabla sea para salidas de modelos de IA.
+		\item Validación: se controlará con el cliente que el dataset sea el correcto.
+	\end{itemize}
+	\item Req. \#2.5: el proceso debe ser ejecutado a través del orquestador Apache Airflow.
+	\begin{itemize}
+		\item Verificación: se generará un DAG para Airflow cuya ejecución será probada en el ambiente de testing.
+		\item Validación: se ejecutará un GitHub Action que controlará las buenas prácticas de código referidas a los DAG y las validaciones se enviarán al cliente.
+	\end{itemize}
+	\item Req. \#3.1: se deben generar métricas de performance de los modelos con el dataset de entrenamiento y prueba.
+	\begin{itemize}
+		\item Verificación: se calcularán distintas métricas de performance de cada modelo para los dos lotes.
+		\item Validación: se entregará un reporte con las distintas métricas al cliente para su revisión.
+	\end{itemize}
+	\item Req. \#4.1, Req. \#4.2 y Req. \#4.3: requerimientos de documentación.
+	\begin{itemize}
+		\item Verificación: se procederá a realizar la documentación necesaria del proyecto.
+		\item Validación: se entregará la documentación al área de \textit{Machine Learning} para su aprobación.
+	\end{itemize}
 \end{itemize}
 
-\end{itemize}
-
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
-
-\end{consigna}
+%\end{consigna}
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
