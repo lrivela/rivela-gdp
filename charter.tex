@@ -40,7 +40,7 @@
  
 \fechaINICIO{28 de febrero de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{24 de abril de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{10 de noviembre de 2023}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{11 de diciembre de 2023}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -75,7 +75,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
 3      & Se completa hasta el punto 12 inclusive                & 27 de marzo de 2023 \\ \hline
-%4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
+4      & Se completa el plan	                                 & 3 de abril de 2023 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en la implementación de un prototipo de procesamiento de lenguaje natural (PNL)  para la clasificación de reclamos de usuarios, y tendrá un presupuesto preliminar estimado de 600 h de trabajo y U\$D500, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en la implementación de un prototipo de procesamiento de lenguaje natural (PNL)  para la clasificación de reclamos de usuarios, y tendrá un presupuesto preliminar estimado de 600 h de trabajo y U\$D7415, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -441,7 +441,7 @@ Cantidad total de horas: (600 h)
 \label{sec:AoN}
 
 %\begin{consigna}{red}
-En la Figura 2 se muestra el diagrama Activity On Node. 
+En la Figura 2 se muestra el diagrama \textit{Activity On Node}. 
 
 \begin{itemize}
 	\item La ruta crítica es resaltada mediante flechas rojas.
@@ -473,7 +473,7 @@ En la figura 3 se muestra el diagrama de Gantt del proyecto.
 \begin{figure}[H]
 \centering 
 \includegraphics[height=.8\textheight]{./Figuras/figura3.png}
-\caption{Diagrama de Gantt}
+\caption{Diagrama de Gantt.}
 \label{fig:diagGantt}
 \end{figure}
 \end{landscape}
@@ -486,64 +486,72 @@ En la figura 3 se muestra el diagrama de Gantt del proyecto.
 
 %\begin{consigna}{red}
 
-A continuación, se detalla la composición del presupuesto del proyecto expresado en dólares estadounidenses:
+A continuación, se detalla la composición del presupuesto del proyecto expresado en dólares estadounidenses y pesos argentinos:
 
 %\end{consigna}
 
 \begin{table}[htpb]
 \centering
-\begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
+\begin{tabularx}{\linewidth}{@{}|X|c|r|r|r|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total (USD)} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total (AR\$)} \\ \hline
 Horas de ingeniería &
   \multicolumn{1}{c|}{600 horas} &
   \multicolumn{1}{c|}{\$10 USD} &
-  \multicolumn{1}{c|}{\$6000 USD} \\ \hline
-Procesamiento en GCP &
+  \multicolumn{1}{c|}{\$6000 USD} &
+  \multicolumn{1}{c|}{\$2.340.000 ARS} \\ \hline
+Procesamiento GCP &
   \multicolumn{1}{c|}{200 horas} &
   \multicolumn{1}{c|}{\$1 USD} &
-  \multicolumn{1}{c|}{\$200 USD} \\ \hline
+  \multicolumn{1}{c|}{\$200 USD} &
+  \multicolumn{1}{c|}{\$78000 ARS} \\ \hline
 Consultas BigQuery & 
   \multicolumn{1}{c|}{1 unidad} &
   \multicolumn{1}{c|}{\$10 USD} &
-  \multicolumn{1}{c|}{\$10 USD} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+  \multicolumn{1}{c|}{\$10 USD} &
+  \multicolumn{1}{c|}{\$3900 ARS} \\ \hline
+\multicolumn{1}{|l|}{} & & & & \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{\$6210 USD} \\ \hline
+  \multicolumn{1}{c|}{\$6210 USD} &
+  \multicolumn{1}{c|}{\$2.421.900 ARS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
+\multicolumn{5}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{Notebook} & 1 unidad & \$1200 USD & \$1200 USD \\ \hline
-\multicolumn{1}{|l|}{Cloud Storage 20GB} & 1 unidad & \$5 USD & \$5 USD \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total (USD)} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total (AR\$)} \\ \hline
+Notebook & 
+	\multicolumn{1}{c|}{1 unidad} & 
+	\multicolumn{1}{c|}{\$1200 USD} & 
+	\multicolumn{1}{c|}{\$1200 USD} & 
+	\multicolumn{1}{c|}{\$468000 ARS} \\ \hline
+Cloud Storage 20GB & 
+	\multicolumn{1}{c|}{1 unidad} & 
+	\multicolumn{1}{c|}{\$5 USD} & 
+	\multicolumn{1}{c|}{\$5 USD} & 
+	\multicolumn{1}{c|}{\$1950 ARS}  \\ \hline
+\multicolumn{1}{|l|}{} & & & & \\ \hline
+\multicolumn{1}{|l|}{} & & & & \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{\$1205 USD} \\ \hline
+  \multicolumn{1}{c|}{\$1205 USD} &
+  \multicolumn{1}{c|}{\$469950 ARS} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{3}{|c|}{TOTAL} & 
-\multicolumn{1}{c|}{\$7415 USD} \\ \hline
+\multicolumn{1}{c|}{\$7415 USD} &
+\multicolumn{1}{c|}{\$2.891.850 ARS} \\ \hline
 \end{tabularx}%
 \end{table}
 
+Nota: los valores fueron convertidos a pesos argentinos tomando la cotización del dólar MEP al día 30 de marzo de 2023, cuya tasa de conversión es 390 AR\$/USD.
 
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
